@@ -1,11 +1,16 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SingleJob = (props) => {
     // console.log(props.j);
     const { id, name, picture, author_image, title, date , min} = props.j;
     const handleAddToDetails = props.handleAddToDetails;
+
+    const handleDetail=()=>{
+        toast("Wow so easy!")
+    }
     return (
         <div className='card'>
             <img style={{ width: "700px" }} src={picture} alt="" />
@@ -20,12 +25,15 @@ const SingleJob = (props) => {
                     </div>
                 </div>
                 <div className='d-flex'>
-                    {min} min read <FontAwesomeIcon onClick={()=>handleAddToDetails(props.j)} icon={faBookmark} style={{ fontSize: 30, color: "black",marginLeft: "5px" }} className="text-center" />
+                    {min} min read 
+                    <div onClick={handleDetail}>
+                    <FontAwesomeIcon onClick={()=>handleAddToDetails(props.j)} icon={faBookmark} style={{ fontSize: 30, color: "black",marginLeft: "5px" }} className="text-center" />
+                    </div>
                 </div>
             </div>
             <h2>{title}</h2>
             <p>#beginners #programming</p>
-            <a href="#">Mark as read</a>
+            <a href="#" >Mark as read</a>
         </div>
     );
 };

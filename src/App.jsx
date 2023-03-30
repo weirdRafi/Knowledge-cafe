@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Showjob from './components/Showjob/Showjob';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [detail, setDetail] = useState([])
@@ -32,6 +34,7 @@ function App() {
          </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
 
   )
