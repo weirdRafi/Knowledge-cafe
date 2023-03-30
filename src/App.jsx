@@ -20,12 +20,16 @@ function App() {
       <Header></Header>
       <div className='row'>
         <div className='col-md-8'>
-          <Main></Main>
+          <Main handleAddToDetails={handleAddToDetails}></Main>
         </div>
         <div className='col-md-4'>
+         <div className='bg-success rounded text-light sticky-top p-3'>
+         <h4>Spent time on read : 0 min</h4>
+          <h4> Bookmark Blogs: {detail.length}</h4>
           {
             detail.map(d => <Showjob d={d}></Showjob>)
           }
+         </div>
         </div>
       </div>
     </div>
