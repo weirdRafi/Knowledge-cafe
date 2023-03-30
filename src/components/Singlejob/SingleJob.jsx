@@ -4,7 +4,7 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 const SingleJob = (props) => {
     // console.log(props.j);
-    const { id, name, picture, author_image, title, date } = props.j;
+    const { id, name, picture, author_image, title, date , min} = props.j;
     const handleAddToDetails = props.handleAddToDetails;
     return (
         <div className='card'>
@@ -20,7 +20,7 @@ const SingleJob = (props) => {
                     </div>
                 </div>
                 <div className='d-flex'>
-                    05min read <FontAwesomeIcon onClick={()=>handleAddToDetails(props.j)} icon={faBookmark} style={{ fontSize: 30, color: "black",marginLeft: "5px" }} className="text-center" />
+                    {min} min read <FontAwesomeIcon onClick={()=>handleAddToDetails(props.j)} icon={faBookmark} style={{ fontSize: 30, color: "black",marginLeft: "5px" }} className="text-center" />
                 </div>
             </div>
             <h2>{title}</h2>
