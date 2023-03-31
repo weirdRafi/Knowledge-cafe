@@ -8,6 +8,7 @@ import Main from './components/Main/Main';
 import Showjob from './components/Showjob/Showjob';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Questions from './components/Questions/Questions';
 
 function App() {
   const [detail, setDetail] = useState([])
@@ -26,7 +27,7 @@ function App() {
         </div>
         <div className='col-md-4'>
          <div className='bg-success rounded text-light sticky-top p-3'>
-         <h4>Spent time on read : 0 min</h4>
+         <h5>Spent time on read : 0 min</h5>
           <h4> Bookmark Blogs: {detail.length}</h4>
           {
             detail.map(d => <Showjob d={d}></Showjob>)
@@ -35,6 +36,7 @@ function App() {
         </div>
       </div>
       <ToastContainer></ToastContainer>
+      <Questions></Questions>
     </div>
 
   )

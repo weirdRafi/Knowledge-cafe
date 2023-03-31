@@ -9,7 +9,7 @@ const SingleJob = (props) => {
     const handleAddToDetails = props.handleAddToDetails;
 
     const handleDetail=()=>{
-        toast("Wow so easy!")
+        toast("Bookmarked!")
     }
     return (
         <div className='card'>
@@ -21,19 +21,20 @@ const SingleJob = (props) => {
                     </div>
                     <div>
                         <h4>{name}</h4>
-                        <p>{date}</p>
+                        <p>{date} (4 days ago)</p>
                     </div>
                 </div>
                 <div className='d-flex'>
                     {min} min read 
                     <div onClick={handleDetail}>
-                    <FontAwesomeIcon onClick={()=>handleAddToDetails(props.j)} icon={faBookmark} style={{ fontSize: 30, color: "black",marginLeft: "5px" }} className="text-center" />
+                    <FontAwesomeIcon onClick={()=>handleAddToDetails(props.j)} icon={faBookmark} style={{ fontSize: 30, color: "black",marginLeft: "5px", cursor: "pointer" }} className="text-center" />
                     </div>
                 </div>
             </div>
             <h2>{title}</h2>
             <p>#beginners #programming</p>
             <a href="#" >Mark as read</a>
+            
         </div>
     );
 };
